@@ -2,7 +2,7 @@
 
 若叶睦「好女孩」像素桌宠的静态展示页，采用像素窗口布局。包含九种动作、十六向注视、三种预览背景、暂停、系统/浅色/深色主题、Agent 安装指令与 v1.0 下载入口。
 
-[下载桌宠](https://github.com/MIBXR/wakaba-mutsumi-pets/releases/tag/v1.0) · [创作来源](../pets/wakaba-mutsumi-good-girl-pixel/creation/README.md)
+[在线体验](https://mutsumi-pixel-desktop.mibxranime.chatgpt.site/) · [下载桌宠](https://github.com/MIBXR/wakaba-mutsumi-pets/releases/tag/v1.0) · [创作来源](../pets/wakaba-mutsumi-good-girl-pixel/creation/README.md)
 
 ![小睦的像素桌面实际页面](preview.png)
 
