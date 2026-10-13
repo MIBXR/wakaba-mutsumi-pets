@@ -1,0 +1,81 @@
+{
+  "sources": [
+    {
+      "url": "https://anime.bang-dream.com/avemujica/character/mutsumi/",
+      "kind": "official character profile",
+      "verifiedBy": "Search result and direct HTTPS HTML read returning HTTP 200; the web open tool returned an error.",
+      "findings": [
+        "Has difficulty expressing emotions and speaking, but cares for others in her own way.",
+        "Has played guitar since childhood and has solid skill.",
+        "Sakiko is her childhood friend; she is Ave Mujica's guitarist."
+      ]
+    },
+    {
+      "url": "https://bgm.tv/ep/1225923",
+      "kind": "community episode discussion",
+      "findings": [
+        "Discussion uses 睦头人 and repeatedly refers to the cucumber gift and its rejection."
+      ]
+    },
+    {
+      "url": "https://moegirl.uk/%E8%8B%A5%E5%8F%B6%E7%9D%A6",
+      "kind": "community encyclopedia mirror, not an official source",
+      "findings": [
+        "Lists nicknames 睦头人 and 小黄瓜; describes gardening, cucumber gifts, the band-enjoyment line, and the contrasting Mortis presentation."
+      ]
+    },
+    {
+      "url": "https://pd.anqstar.com/drawings/drw_0a1c7d99d3e7cad76f807dff401fc335",
+      "kind": "community derivative artwork",
+      "verifiedBy": "Direct HTTPS HTML read of the site home page, including this drawing link and description.",
+      "findings": [
+        "A Mutsumi bead-art derivative explicitly names the 好女孩 meme and describes the thick outline and thought bubble. This does not establish original authorship."
+      ]
+    },
+    {
+      "url": "https://github.com/crafter-station/petdex/blob/main/README.md",
+      "kind": "PetDex primary documentation",
+      "findings": [
+        "Nine named animation states; v1 uses 8x9 cells, v2 uses 8x11 cells; each cell is 192x208 pixels.",
+        "The PetDex native renderer documents nine state rows; gaze behavior must be checked per consuming client."
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1oe6yYfE1v/",
+      "kind": "community clip page",
+      "findings": [
+        "The page explicitly titles the clip 祥 移动, published 2025-01-03. The clip listing was read; this does not establish a frame timestamp."
+      ]
+    },
+    {
+      "url": "https://www.ptt.best/bbs/C_Chat/M.1730980626.A.693.html",
+      "kind": "mirror of a PTT community discussion",
+      "findings": [
+        "Discussion centers on home-grown cucumbers given in a premium gift bag and subsequently returned. The ptt.cc source could not be fetched, so the discussion was read through its mirror."
+      ]
+    },
+    {
+      "url": "https://bgm.tv/blog/328616",
+      "kind": "authored community analysis",
+      "findings": [
+        "Quotes the episode 12 exchange 良かったね with the translation 真是太好了呢. The proposed caption 太好了呢 is a shortened adaptation."
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/opus/1064033162150019074/",
+      "kind": "authored community interpretation, not official character canon",
+      "findings": [
+        "Discusses the short speech pattern 祥，移动 and quotes 不会长久的. Used only for dialogue and community usage, not its psychological interpretation."
+      ]
+    }
+  ],
+  "captionProvenance": {
+    "祥 移动": "User-selected wording and community clip evidence.",
+    "好女孩?": "User-selected community meme.",
+    "太好了呢": "Shortened from the dialogue quoted as 真是太好了呢.",
+    "不会长久的": "Dialogue referenced by community discussion.",
+    "又退货?": "New fan wording inspired by the returned cucumber gift.",
+    "不许退货": "New fan wording inspired by the returned cucumber gift.",
+    "瓜在长了": "New fan wording based on cucumber gardening."
+  }
+}
