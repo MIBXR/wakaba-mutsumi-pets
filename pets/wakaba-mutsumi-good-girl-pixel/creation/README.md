@@ -1,6 +1,6 @@
 # 创作依据
 
-主形象使用用户提供的“好女孩”插画及指定的 54×54 拼豆图。保留右侧与下沿裁切、黑色描边和原图 12 色调色板；不补完整身体，不添加嘴巴，眼睛保持原图的睁眼结构。思考气泡靠近头部左上方，无内容时隐藏。
+主形象使用用户提供的“好女孩”插画及指定的 54×54 拼豆图。保留右侧与下沿裁切、黑色外轮廓、右下角像素圆弧和原图 12 色调色板；不补完整身体，不添加嘴巴，眼睛保持原图的睁眼结构。思考气泡靠近头部左上方，无内容时隐藏。
 
 ## 参考与署名
 
@@ -28,6 +28,8 @@
 
 ## 代码与像素
 
-[art.py](code/art.py) 保存形象、眼睛保护区域与道具绘制。字幕使用已确认的点阵字形 [caption-pixels.json](references/caption-pixels.json)，不依赖目标电脑安装中文字体。
+[art.py](code/art.py) 保存形象、外轮廓、眼睛保护区域与道具绘制；[render.py](code/render.py) 生成九种动画、十六向注视、正式图集和逐动作 GIF。字幕使用已确认的点阵字形 [caption-pixels.json](references/caption-pixels.json)，不依赖目标电脑安装中文字体。
 
 [确认的设计图](../materials/design/02-nine-states.png) 用于核对形象与动作含义。
+
+使用 Python 与 Pillow 12.3.0，运行 `python creation/code/render.py` 可重建图集和逐动作 GIF。原生像素图集保存在 `materials/spritesheet-logical.png`；安装图集以最近邻放大两倍，不做平滑插值。

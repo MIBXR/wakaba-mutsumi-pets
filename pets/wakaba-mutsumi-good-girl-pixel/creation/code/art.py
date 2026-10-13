@@ -1,4 +1,5 @@
 from pathlib import Path
+from collections import deque
 import json
 from PIL import Image, ImageDraw
 
@@ -21,12 +22,44 @@ def polygon(im, points, fill, width=1, outline=None):
         d.line(points + [points[0]], fill=outline, width=width, joint='curve')
 
 
+def finish_portrait(image):
+    center_x,center_y,radius=46,45,7
+    draw=ImageDraw.Draw(image)
+    for y in range(54):
+        for x in range(54):
+            corner=x>center_x and y>center_y
+            distance=(x-center_x)**2+(y-center_y)**2
+            if y>52 or (corner and distance>radius**2):
+                image.putpixel((x,y),(0,0,0,0))
+            elif corner and distance>(radius-1)**2:
+                draw.point((x,y),fill=P['ink'])
+    for y in range(5,46):
+        if image.getpixel((52,y))[3]:
+            draw.point((53,y),fill=P['ink'])
+    for x in range(47):
+        if image.getpixel((x,51))[3]:
+            draw.point((x,52),fill=P['ink'])
+    draw.point((46,52),fill=P['ink'])
+    return image
+
+
 def reference_head():
-    head = Image.open(REFERENCE / 'pixel-reference.png').convert('RGBA')
+    head=Image.open(REFERENCE/'pixel-reference.png').convert('RGBA')
     for y in range(11):
-        for x in range(15):
-            head.putpixel((x,y),(0,0,0,0))
-    return head
+        for x in range(15):head.putpixel((x,y),(0,0,0,0))
+    white={(254,255,255),(253,251,255)}
+    queue=deque([(x,y) for x in range(54) for y in (0,53)]+
+                [(x,y) for x in (0,53) for y in range(54)])
+    seen=set()
+    while queue:
+        x,y=queue.popleft()
+        if (x,y) in seen or not(0<=x<54 and 0<=y<54):continue
+        seen.add((x,y))
+        color=head.getpixel((x,y))
+        if color[3] and color[:3] not in white:continue
+        head.putpixel((x,y),(0,0,0,0))
+        queue.extend(((x-1,y),(x+1,y),(x,y-1),(x,y+1)))
+    return finish_portrait(head)
 
 
 HEAD = reference_head()

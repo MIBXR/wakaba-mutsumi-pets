@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>好女孩 · 若叶睦 — 动作预览</title>
+<style>
+:root{font:16px/1.6 system-ui,"Microsoft YaHei",sans-serif;color:#213e2b;background:#f4f2e9;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}main{max-width:1140px;margin:auto;padding:36px 24px 64px}
+h1{font-size:34px;line-height:1.25;margin:0 0 10px}h2{font-size:22px;margin:0 0 16px}p{margin:0 0 16px}.muted{color:#60705c;font-size:14px}
+.player{display:grid;grid-template-columns:minmax(300px,1.2fr) minmax(260px,1fr);gap:24px;padding:24px;background:#fffef8;border:1px solid #cdd6c4;border-radius:20px;margin:24px 0 36px}
+.stage{min-height:430px;border-radius:12px;display:grid;place-items:center;background:#e7ebde;overflow:hidden}
+.stage.dark{background:#26322b}.stage.checker{background-color:#d8ddd4;background-image:linear-gradient(45deg,#eef1e9 25%,transparent 25%),linear-gradient(-45deg,#eef1e9 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#eef1e9 75%),linear-gradient(-45deg,transparent 75%,#eef1e9 75%);background-size:24px 24px;background-position:0 0,0 12px,12px -12px,-12px 0}
+canvas{image-rendering:pixelated;width:384px;height:416px;max-width:100%;object-fit:contain}
+label{display:block;font-size:14px;font-weight:650;margin:0 0 6px}select,button{font:inherit;font-size:14px;min-height:42px;border-radius:8px;border:1px solid #bdcbb1;background:#fffef9;color:inherit;padding:9px 12px}select{width:100%}button{cursor:pointer}button:hover{background:#e8eddf}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #849e70;outline-offset:3px}.row{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.row>div{flex:1;min-width:110px}.row button{flex:1}input[type=range]{width:100%;accent-color:#54713b}output{font-size:14px}.control-note{font-size:14px;margin-top:14px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:#fffef8;border:1px solid #cdd6c4;border-radius:14px;padding:18px}.card h3{font-size:18px;margin:0}.card p{font-size:14px;color:#60705c;margin:5px 0 0}.card img{display:block;width:192px;height:208px;image-rendering:pixelated;max-width:100%;object-fit:contain;margin:8px auto}.card a{font-size:14px;color:#33552b}footer{margin-top:32px;font-size:14px;color:#60705c}a{color:#33552b}
+@media(max-width:760px){main{padding:24px 16px 48px}h1{font-size:28px}.player{grid-template-columns:1fr;padding:16px;gap:18px}.stage{min-height:360px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:12px}.card img{width:160px;height:174px}}
+@media(max-width:420px){.gallery{grid-template-columns:1fr}.card img{width:192px;height:208px}}
+</style>
+<main>
+<h1>好女孩 · 若叶睦</h1>
+<p>面无表情，瓜事很多。种瓜、带瓜、送瓜，以及收到退货。</p>
+<p class="muted">正式图集预览 · 黑色轮廓与像素圆角 · 所有动作无嘴巴、双眼睁开</p>
+<section class="player" aria-label="逐帧播放器">
+<div class="stage checker" id="stage"><canvas id="pet" width="192" height="208" aria-label="当前桌宠动画"></canvas></div>
+<div>
+<label for="action">选择动作</label><select id="action"></select>
+<p id="description" class="control-note"></p>
+<div class="row"><button id="play" type="button">暂停</button><button id="previous" type="button">上一帧</button><button id="next" type="button">下一帧</button></div>
+<label for="frame">查看帧</label><input id="frame" type="range" min="0" value="0" step="1"><output id="counter" for="frame"></output>
+<div class="row"><div><label for="size">显示尺寸</label><select id="size"><option value="384">放大检查 · 384px</option><option value="192">192px</option><option value="128">128px</option></select></div><div><label for="speed">播放速度</label><select id="speed"><option value="1">正常</option><option value="0.5">慢放 · 0.5 倍</option></select></div></div>
+<label for="background">预览背景</label><select id="background"><option value="checker">透明棋盘</option><option value="light">米白背景</option><option value="dark">深色背景</option></select>
+<p class="control-note muted">可暂停后逐帧查看。这里按图集帧顺序循环播放；实际触发和停留时间由客户端控制。</p>
+<a href="spritesheet.png">打开正式图集</a>
+</div>
+</section>
+<h2>全部动作</h2>
+<div class="gallery" id="gallery"></div>
+<footer>GIF 均从正式 spritesheet.png 裁帧导出。<a href="README.md">成品与导入说明</a></footer>
+</main>
+<script>
+const entries=[{"state": "idle", "title": "睦头人护瓜", "caption": null, "row": 0, "frame_count": 6, "durations_ms": [1680, 660, 660, 840, 840, 1920], "description": "黄瓜从下沿探头，小睦默默护住。"}, {"state": "running-right", "title": "向右移动", "caption": "祥 移动", "row": 1, "frame_count": 8, "durations_ms": [120, 120, 120, 120, 120, 120, 120, 220], "description": "抱瓜向右移动：祥 移动。"}, {"state": "running-left", "title": "向左移动", "caption": "祥 移动", "row": 2, "frame_count": 8, "durations_ms": [120, 120, 120, 120, 120, 120, 120, 220], "description": "抱瓜向左移动：祥 移动。"}, {"state": "waving", "title": "举瓜打招呼", "caption": "好女孩?", "row": 3, "frame_count": 4, "durations_ms": [140, 140, 140, 280], "description": "举起黄瓜，晃一下，再收回。"}, {"state": "jumping", "title": "抛瓜庆祝", "caption": "太好了呢", "row": 4, "frame_count": 5, "durations_ms": [140, 140, 140, 140, 280], "description": "蓄力、起跳、抛瓜、接住、落地。"}, {"state": "failed", "title": "收到退货", "caption": "又退货?", "row": 5, "frame_count": 8, "durations_ms": [140, 140, 140, 140, 140, 140, 140, 240], "description": "礼袋又被退了回来。"}, {"state": "waiting", "title": "请收下黄瓜", "caption": "不许退货", "row": 6, "frame_count": 6, "durations_ms": [150, 150, 150, 150, 150, 260], "description": "把黄瓜礼袋递出去，等你接住。"}, {"state": "running", "title": "种瓜工作中", "caption": "瓜在长了", "row": 7, "frame_count": 6, "durations_ms": [120, 120, 120, 120, 120, 220], "description": "浇水、长叶、结果，再收瓜。"}, {"state": "review", "title": "检查黄瓜堆", "caption": "不会长久的", "row": 8, "frame_count": 6, "durations_ms": [150, 150, 150, 150, 150, 280], "description": "戳动黄瓜堆，接住倒下的瓜放回。"}, {"state": "look-directions", "title": "十六方向注视", "caption": null, "row": 9, "frame_count": 16, "durations_ms": [220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220], "description": "从上方开始，顺时针查看十六个注视方向。"}];
+const canvas=document.querySelector('#pet'),ctx=canvas.getContext('2d'),action=document.querySelector('#action'),slider=document.querySelector('#frame'),counter=document.querySelector('#counter'),play=document.querySelector('#play');
+const source=new Image();source.src='spritesheet.png';ctx.imageSmoothingEnabled=false;
+let selected=0,index=0,playing=!matchMedia('(prefers-reduced-motion: reduce)').matches,timer=null;
+function current(){return entries[selected]}
+function paint(){const e=current(),row=e.state==='look-directions'?9+Math.floor(index/8):e.row,col=e.state==='look-directions'?index%8:index;ctx.clearRect(0,0,192,208);ctx.drawImage(source,col*192,row*208,192,208,0,0,192,208);slider.value=index;counter.textContent=`第 ${index+1} / ${e.frame_count} 帧${e.state==='look-directions'?' · '+index*22.5+'°':''}`;}
+function schedule(){clearTimeout(timer);if(playing)timer=setTimeout(()=>{index=(index+1)%current().frame_count;paint();schedule()},current().durations_ms[index]/Number(document.querySelector('#speed').value));play.textContent=playing?'暂停':'播放';}
+function choose(n){selected=n;index=0;slider.max=current().frame_count-1;document.querySelector('#description').textContent=current().description;paint();schedule();}
+function step(delta){playing=false;index=(index+delta+current().frame_count)%current().frame_count;paint();schedule();}
+entries.forEach((e,i)=>{action.add(new Option(e.title,i));const card=document.createElement('article');card.className='card';const title=document.createElement('h3');title.textContent=e.title;const image=document.createElement('img');image.src=`previews/${e.state}.gif`;image.alt=e.title+'透明动画';const info=document.createElement('p');info.textContent=e.caption||'无文字气泡';const link=document.createElement('a');link.href=image.src;link.textContent='打开透明 GIF';card.append(title,info,image,link);document.querySelector('#gallery').append(card)});
+source.addEventListener('load',()=>choose(0));source.addEventListener('error',()=>{document.querySelector('#description').textContent='未能读取 spritesheet.png，请将预览页与图集保存在同一文件夹。'});
+action.addEventListener('change',()=>choose(Number(action.value)));play.addEventListener('click',()=>{playing=!playing;schedule()});document.querySelector('#previous').addEventListener('click',()=>step(-1));document.querySelector('#next').addEventListener('click',()=>step(1));slider.addEventListener('input',()=>{playing=false;index=Number(slider.value);paint();schedule()});document.querySelector('#speed').addEventListener('change',schedule);document.querySelector('#size').addEventListener('change',e=>{canvas.style.width=e.target.value+'px';canvas.style.height=(Number(e.target.value)*208/192)+'px'});document.querySelector('#background').addEventListener('change',e=>document.querySelector('#stage').className='stage '+e.target.value);
+</script>
+</html>
