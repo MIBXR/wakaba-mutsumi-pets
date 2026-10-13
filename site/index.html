@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>小睦的像素桌面 · 好女孩桌宠</title>
+  <meta name="description" content="一只面无表情、瓜事很多的若叶睦像素桌宠。试玩九种黄瓜日常、十六向注视，把好女孩带回你的桌面。">
+  <meta property="og:title" content="小睦的像素桌面 · 好女孩桌宠">
+  <meta property="og:description" content="睦头人，上线。九种动作、十六向注视，以及不许退货的黄瓜。">
+  <meta property="og:image" content="https://mutsumi-pixel-desktop.mibxranime.chatgpt.site/assets/cover.png">
+  <meta property="og:url" content="https://mutsumi-pixel-desktop.mibxranime.chatgpt.site/">
+  <link rel="icon" href="assets/portrait.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<svg class="icons" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="12" rx="1"/><path d="M15 8V4H4v12h4"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/><path d="M4 12h16M12 4v16"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 2-5M4 3v5h5"/></symbol>
+  <symbol id="i-pointer" viewBox="0 0 24 24"><path d="M5 3v15l4-4 4 7 3-2-4-7 6-1Z"/></symbol>
+  <symbol id="i-theme" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+</defs></svg>
+<a class="skip" href="#play">跳到桌宠试玩</a>
+<div class="wrap">
+  <header class="masthead">
+    <a class="brand" href="#"><span class="brandmark">睦</span>小睦的像素桌面</a>
+    <nav aria-label="主要导航"><a href="#play">试玩桌宠</a><a href="#download">下载</a><a href="#about">创作说明</a></nav>
+    <div class="header-tools"><button class="theme-button" id="theme" aria-label="主题：跟随系统，点击切换浅色"><svg><use href="#i-theme"/></svg><span>跟随系统</span></button><a class="github" href="https://github.com/MIBXR/wakaba-mutsumi-pets">GitHub<svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title"><div><h1 id="hero-title">睦头人，上线。</h1><p>她正在认真种瓜。你也可以先摸一会儿鱼。<br>点点动作，把这个面无表情的小家伙带回桌面。</p></div><div class="version"><strong>好女孩 / v1.0</strong><span>若叶睦 · 像素桌宠<br>09 种动作 · 16 向注视</span></div></section>
+    <section class="petwindow" id="play" aria-labelledby="window-title">
+      <header class="windowbar"><h2 id="window-title"><i class="square" aria-hidden="true"></i>小睦的黄瓜工作间</h2><span class="quiet">动作预览</span></header>
+      <div class="windowbody">
+        <div class="stage" id="stage" data-backdrop="grid">
+          <p class="stagebadge" id="action-status" aria-live="polite"><i class="dot" aria-hidden="true"></i><span>小睦正在赶来</span></p>
+          <div class="pet-frame"><img id="poster" src="assets/idle.png" alt="若叶睦像素桌宠"><canvas id="pet" width="192" height="208" role="img" aria-label="小睦待机护瓜" tabindex="0" aria-describedby="stage-hint" hidden></canvas></div>
+          <p class="coordinate" id="stage-hint"><svg aria-hidden="true"><use href="#i-pointer"/></svg><span>选一个动作，或开启注视模式和她对视。</span></p>
+        </div>
+        <fieldset class="panel" id="pet-controls" disabled><legend class="sr-only">桌宠动作与注视</legend>
+          <h3>今天让小睦做什么？</h3><p class="quiet">选动作，或者和她对视一会儿。</p>
+          <div class="actiongrid" role="group" aria-label="九种动作">
+            <button data-state="idle" aria-pressed="true">睦头人护瓜</button><button data-state="running-left" aria-pressed="false">向左移动</button><button data-state="running-right" aria-pressed="false">向右移动</button>
+            <button data-state="waving" aria-pressed="false">好女孩？</button><button data-state="jumping" aria-pressed="false">太好了呢</button><button data-state="failed" aria-pressed="false">又退货？</button>
+            <button data-state="waiting" aria-pressed="false">不许退货</button><button data-state="running" aria-pressed="false">瓜在长了</button><button data-state="review" aria-pressed="false">不会长久的</button>
+          </div>
+          <div class="gaze"><div class="gaze-wheel" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="39"/><path d="M50 2v9m18-5-4 8M84 16l-7 7M95 32l-8 4M98 50h-9M95 68l-8-4M84 84l-7-7M68 95l-4-8M50 98v-9M32 95l4-8M16 84l7-7M5 68l8-4M2 50h9M5 32l8 4M16 16l7 7M32 5l4 8"/></svg><img src="assets/portrait.png" alt=""></div><div class="gaze-controls"><h4>十六向注视</h4><button id="follow" class="small-button" aria-pressed="false">跟随指针</button><label class="sr-only" for="direction">手动选择注视方向</label><select id="direction"><option value="">手动选方向</option><option value="0">正上方</option><option value="1">右上偏上</option><option value="2">右上方</option><option value="3">右上偏右</option><option value="4">正右方</option><option value="5">右下偏右</option><option value="6">右下方</option><option value="7">右下偏下</option><option value="8">正下方</option><option value="9">左下偏下</option><option value="10">左下方</option><option value="11">左下偏左</option><option value="12">正左方</option><option value="13">左上偏左</option><option value="14">左上方</option><option value="15">左上偏上</option></select><p class="quiet">触屏可选方向，键盘也能操作。</p></div></div>
+        </fieldset>
+      </div>
+      <footer class="windowfoot"><p id="motion-note">面无表情，瓜事很多。</p><div class="toolbar"><button id="backdrop"><svg aria-hidden="true"><use href="#i-grid"/></svg><span>背景：网格</span></button><button id="pause" aria-pressed="false"><svg aria-hidden="true"><use href="#i-pause"/></svg><span>暂停</span></button><button id="reset" disabled><svg aria-hidden="true"><use href="#i-reset"/></svg>回到待机</button></div></footer>
+    </section>
+    <section class="download" id="download" aria-labelledby="download-title"><div class="download-title"><img src="assets/portrait.png" alt="好女孩像素款小睦"><div><h2 id="download-title">不用等瓜熟。现在带走。</h2><p>若叶睦 · 好女孩像素款 / v1.0<br>支持 Codex、其他兼容 Agent 和 PetDex。</p></div></div><div><div class="buttons"><button class="btn dark" id="install-open">用 Agent 安装<svg aria-hidden="true"><use href="#i-copy"/></svg></button><a class="btn" id="download-zip" href="https://github.com/MIBXR/wakaba-mutsumi-pets/releases/download/v1.0/wakaba-mutsumi-good-girl-pixel-v1.0.zip">下载 ZIP</a></div><p class="quiet">安装文件与启用分开，默认保留当前宠物。</p></div></section>
+    <section class="notes" id="about" aria-label="创作说明"><article><span class="number">01 / 这是谁</span><h2>「好女孩」，大概吧。</h2><p>保留梗图里那张不动声色的脸。<br>不画嘴巴，眼神和黄瓜就是台词。</p><a href="https://github.com/MIBXR/wakaba-mutsumi-pets/blob/main/pets/wakaba-mutsumi-good-girl-pixel/README.md">认识小睦</a></article><article><span class="number">02 / 她会什么</span><h2>祥 移动。瓜也移动。</h2><p>抱瓜、种瓜、送瓜，还会接收退货。<br>九种动作，都有一点小心思。</p><a href="#play">回到动作工作间</a></article><article><span class="number">03 / 从哪里来</span><h2>像素有出处，梗也有。</h2><p>台词引用、社区梗与二创文案分开说明。参考素材和制作代码，均可在仓库查看。</p><a href="https://github.com/MIBXR/wakaba-mutsumi-pets/blob/main/pets/wakaba-mutsumi-good-girl-pixel/creation/README.md">查看创作与来源</a></article></section>
+    <details class="sources"><summary>角色、插画与文案来源</summary><div><p>角色来自 <a href="https://anime.bang-dream.com/avemujica/character/mutsumi/">BanG Dream! 官方角色页</a>。本桌宠为同人创作，以用户提供的「好女孩」梗图和 <a href="https://pd.anqstar.com/drawings/drw_0a1c7d99d3e7cad76f807dff401fc335">54×54 像素参考</a>为视觉依据。参考页面发布者为 huolizi；原插画作者与首次发布出处尚未核实。</p><p>「祥 移动」「不会长久的」参考台词及社区引用；「太好了呢」为台词节选。「好女孩？」来自社区梗；「又退货？」「不许退货」「瓜在长了」是围绕黄瓜情节创作的二创文案。<a href="https://github.com/MIBXR/wakaba-mutsumi-pets/blob/main/pets/wakaba-mutsumi-good-girl-pixel/creation/references/sources.json">逐项来源记录</a></p><p>网站使用 v1.0 正式图集预览；客户端中的动作触发与停留节奏由客户端控制。十六向注视需要客户端支持 Sprite v2 的注视功能。</p></div></details>
+  </main>
+  <footer class="footer"><div>若叶睦 · 好女孩像素桌宠<br>角色及参考作品的权利归原权利人；本作品为同人创作。</div><div class="footerlinks"><a href="https://github.com/MIBXR/wakaba-mutsumi-pets">GitHub</a><a href="https://github.com/MIBXR/wakaba-mutsumi-pets/releases/tag/v1.0">v1.0 下载</a></div></footer>
+</div>
+<dialog id="install" aria-labelledby="install-title"><div class="dialog-head"><h2 id="install-title">让 Agent 接走小睦。</h2><button class="icon-button" id="install-close" aria-label="关闭安装指令"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div><div class="install-intro"><canvas id="install-pet" width="192" height="208" role="img" aria-label="小睦递出黄瓜礼袋"></canvas><div><h3>若叶睦 · 好女孩</h3><p>复制指令，发给你正在使用的 Agent。<br>它会按目标应用的目录安装同一份 v1.0 成品。</p><label class="check"><input type="checkbox" id="activate">安装完成后切换为小睦</label></div></div><label for="install-prompt" class="prompt-label">安装指令</label><textarea id="install-prompt" rows="7" readonly spellcheck="false"></textarea><div class="dialog-actions"><p id="copy-status" role="status">默认只安装，保留当前宠物。</p><button class="btn dark" id="copy" disabled>复制指令<svg aria-hidden="true"><use href="#i-copy"/></svg></button></div></dialog>
+<noscript><p class="noscript">动作试玩需要启用 JavaScript。你仍可通过上方下载链接取得桌宠便携包。</p></noscript>
+</body>
+</html>
