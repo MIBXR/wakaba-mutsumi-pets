@@ -1,0 +1,178 @@
+{
+  "sprite_version": 2,
+  "frame_size": [
+    192,
+    208
+  ],
+  "grid": [
+    8,
+    11
+  ],
+  "states": [
+    {
+      "state": "idle",
+      "title": "睦头人护瓜",
+      "caption": null,
+      "row": 0,
+      "frame_count": 6,
+      "durations_ms": [
+        1680,
+        660,
+        660,
+        840,
+        840,
+        1920
+      ]
+    },
+    {
+      "state": "running-right",
+      "title": "向右移动",
+      "caption": "祥 移动",
+      "row": 1,
+      "frame_count": 8,
+      "durations_ms": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        220
+      ]
+    },
+    {
+      "state": "running-left",
+      "title": "向左移动",
+      "caption": "祥 移动",
+      "row": 2,
+      "frame_count": 8,
+      "durations_ms": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        220
+      ]
+    },
+    {
+      "state": "waving",
+      "title": "举瓜打招呼",
+      "caption": "好女孩?",
+      "row": 3,
+      "frame_count": 4,
+      "durations_ms": [
+        140,
+        140,
+        140,
+        280
+      ]
+    },
+    {
+      "state": "jumping",
+      "title": "抛瓜庆祝",
+      "caption": "太好了呢",
+      "row": 4,
+      "frame_count": 5,
+      "durations_ms": [
+        140,
+        140,
+        140,
+        140,
+        280
+      ]
+    },
+    {
+      "state": "failed",
+      "title": "收到退货",
+      "caption": "又退货?",
+      "row": 5,
+      "frame_count": 8,
+      "durations_ms": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        240
+      ]
+    },
+    {
+      "state": "waiting",
+      "title": "请收下黄瓜",
+      "caption": "不许退货",
+      "row": 6,
+      "frame_count": 6,
+      "durations_ms": [
+        150,
+        150,
+        150,
+        150,
+        150,
+        260
+      ]
+    },
+    {
+      "state": "running",
+      "title": "种瓜工作中",
+      "caption": "瓜在长了",
+      "row": 7,
+      "frame_count": 6,
+      "durations_ms": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        220
+      ]
+    },
+    {
+      "state": "review",
+      "title": "检查黄瓜堆",
+      "caption": "不会长久的",
+      "row": 8,
+      "frame_count": 6,
+      "durations_ms": [
+        150,
+        150,
+        150,
+        150,
+        150,
+        280
+      ]
+    }
+  ],
+  "gaze": {
+    "rows": [
+      9,
+      10
+    ],
+    "angles_degrees": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      112.5,
+      135.0,
+      157.5,
+      180.0,
+      202.5,
+      225.0,
+      247.5,
+      270.0,
+      292.5,
+      315.0,
+      337.5
+    ],
+    "zero": "up",
+    "rotation": "clockwise"
+  },
+  "timing_note": "Preview timings follow the inspected Codex desktop renderer; client scheduling may differ."
+}
