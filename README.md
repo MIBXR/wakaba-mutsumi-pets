@@ -20,7 +20,7 @@
 
 一个可以试玩的黄瓜工作间：九种动作、十六向注视、背景切换、暂停与深浅主题。安装指令支持 Codex、其他兼容 Agent 和 PetDex；默认保留当前启用的宠物。
 
-[网站源码与本地打开方式](site/README.md)
+[打开像素桌面（仅站主可访问）](https://mutsumi-pixel-desktop.mibxranime.chatgpt.site/) · [网站源码与本地打开方式](site/README.md)
 
 ![小睦的像素桌面实际页面](site/preview.png)
 
