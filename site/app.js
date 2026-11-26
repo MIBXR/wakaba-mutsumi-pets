@@ -40,7 +40,7 @@ function updatePause() {
   $('#pause').setAttribute('aria-pressed', String(paused));
   $('#pause span').textContent = paused ? '播放' : '暂停';
   $('#pause use').setAttribute('href', paused ? '#i-play' : '#i-pause');
-  $('#motion-note').textContent = paused ? '已暂停；仍可手动选动作和方向。' : '面无表情，瓜事很多。';
+  $('#motion-note').textContent = paused ? '动画已暂停，仍可手动切换动作与注视方向。' : '话不多，但黄瓜管够。';
 }
 
 function chooseAction(state) {
@@ -54,7 +54,7 @@ function chooseAction(state) {
   const action = map.states.find((item) => item.state === state);
   $('#action-status span').textContent = action.caption ? `${action.title} · ${action.caption}` : action.title;
   $('#pet').setAttribute('aria-label', `小睦：${action.title}`);
-  $('#stage-hint span').textContent = '选一个动作，或开启注视模式和她对视。';
+  $('#stage-hint span').textContent = '点击右侧按钮切换动作，或开启跟随模式和她对视。';
 }
 
 function chooseDirection(direction) {
